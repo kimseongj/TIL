@@ -139,15 +139,11 @@ NotificationCenter는 각 객체들에게 정보를 전달하기 위한 중심�
 
 NotificationCenter는 싱글톤으로 구성되어 있어 사용자가 인스턴스를 만들지 않고 NotificationCenter를 부를 수 있다.
 
-
-
 #### Observer
 
 Observer란 NotificationCenter에서 자신의 정보를 등록하여 알림을 받고자 하는 객체를 의미한다. 
 
 모든 객체는 Observer가 될 수 있고, 이벤트를 보내는 객체가 될 수도 있다.
-
-
 
 #### Post
 
@@ -157,11 +153,56 @@ Post는 객체가 NotificationCenter로 이벤트를 보내는 행위를 의미�
 
 Notification은 이벤트를 발행하는 객체가 NotificationCenter에 보내는 이벤트를 의미한다.
 
-<img width="595" alt="스크린샷 2023-01-03 오후 9 01 32" src="https://user-images.githubusercontent.com/88870642/210354026-ad826a1a-ad1f-4144-a5e9-d42103eccb6b.png">
+#### NotificationName
 
-### ABC
+NotificationCenter는 싱글톤으로 만들어지는데, 이벤트를 여러개 만들고 싶을 때는 어떻게 하는게 좋을까
 
-음...
+예를 들면, 텍스트를 바꾸는 알림, 이미지를 변경하는 알림을 보내고자 한다면, 싱글톤인 NotificationCenter는 자신에게 보내지는 이벤트가 어떤 이벤트인지 알고 있어야 한다. 
+
+NotificationName이라는 식별자를 통해 구분해서 알려준다.
+
+
+
+#### 사용 예제
+
+NotificationCenter에서 addObserver 메서드를 제공하기 때문에 가져다 쓰면 된다. 
+
+```swift
+func addObserver(
+	_ observer: Any,  // 인스턴스를 넣어준다.
+  selector aSelector: Selector, // 
+  name aName: NSNotification.Name?,
+  object anObject: Any?
+)
+```
+
+옵저버 패턴 / 발행-구동 패턴
+
+
+
+#### observer 
+
+인스턴스들을 옵저버로 지정한다.
+
+
+
+#### aSelector
+
+수행할 작업이 무엇인지 표시한다. 
+
+
+
+#### aName
+
+name은 전달받은 Notification의 이름을 적는다. 이 옵저버들이 어떤 이벤트를 받을지 결정한다.
+
+만약 aName을 nil값을 넣으면 NotificationName을 고려하지 않고 모든 Notification을 받게 된다.
+
+
+
+anObject
+
+이 파라미터를 통해 Notification을 보내는 객체를 특정할 수 있다. 
 
 
 
