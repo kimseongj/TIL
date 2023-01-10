@@ -1,5 +1,28 @@
 import UIKit
 
+class Bank {
+    @objc dynamic var jango: Int = 100
+}
+
+class BankManager {
+    @objc var bank: Bank
+    var observation: NSKeyValueObservation?
+    
+    init(bank: Bank) {
+        self.bank = bank
+        observation = observe(\.bank.jango,)
+    }
+}
+
+let hankookBank: Bank = Bank()
+let manager: BankManager = BankManager(bank: hankookBank)
+
+hankookBank.jango = 99
+
+
+
+
+
 class Teacher {
     func callStudent() {
         let noti = Notification(name: Notification.Name.hey) // Notification.Name. Notification.Name("hey")
