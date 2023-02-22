@@ -38,10 +38,11 @@ print(result) //12,345,678.1234567
 
 ## Closure
 
-- 일급 시민
+- 일급 시민(다른 곳으로 저장되거나, 전달될 수 있음)
 - 변수, 상수 등으로 저장, 전달인자로 전달이 가능
 - 함수 : 이름이 있는 클로저
 - 함수와 클로저는 같은 역할을 한다. 
+- 코드의 블럭
 
 - 정의
 
@@ -107,6 +108,11 @@ calculated = calculate(a: 3, b: 4, { (left: Int, right: Int) -> Int in 									
 ```swift
 result = calculate(a: 10, b: 10) { (left: Int, right: Int) -> Int in
                                  return left + right}
+
+ abc = abc() { (left: Int, right: Int) -> Int in
+                                 return left + right}
+abc = abc { (left: Int, right: Int) -> Int in
+                                 return left + right} // 클로저가 abc의 전달인자이다.
 ```
 
 

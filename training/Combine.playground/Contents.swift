@@ -30,7 +30,8 @@ class ParkSubscriber: Subscriber {
     // 매개변수 타입 Subscription은 프로토콜로 publisher와 subscriber간의 연결을 나타내는 말그대로 "구독"이다.
     func receive(subscription: Subscription) {
         print("구독 시작")
-        subscription.request(.unlimited)
+        subscription.request(.unlimited
+        )
     }
     
     //subscriber에게 publisher가 element를 생성했음을 알림
