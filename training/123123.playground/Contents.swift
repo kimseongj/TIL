@@ -51,17 +51,22 @@ import UIKit
 ////a.removeLast()
 //print(a)
 
-extension String {
-    func abc() -> String {
-      return self + "123"
-       
+class Abc {
+    var abc: Int
+    init(abc: Int) {
+        self.abc = abc
     }
 }
 
-"12345".abc()
+let a: Abc = Abc(abc: 3)
 
-for i in "12345" {
-    print(i is String)
-}
+let b: Abc = Abc(abc: 2)
 
+let c: Abc = Abc(abc: 1)
 
+print(a.abc)
+
+let a1 = a
+a1.abc = 4
+
+print(a.abc) // 4
