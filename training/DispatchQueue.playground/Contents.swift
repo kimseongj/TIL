@@ -55,35 +55,29 @@ import Foundation
 import Foundation
 
 var cards = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-//let semaphore = DispatchSemaphore(value: 2)
+let semaphore = DispatchSemaphore(value: 2)
 
 for _ in 1...5 {
+    let card = cards.removeFirst()
     DispatchQueue.global().async {
-            //semaphore.wait()
-            let card = cards.removeFirst()
+        if true {
+            semaphore.wait()
+            
             print("야곰: \(card) 카드를 뽑았습니다!")
             Thread.sleep(forTimeInterval: 1.3)
             print("야곰 \(card) 뽑기 끝")
-            //semaphore.signal()
+            semaphore.signal()
+        }
     }
 }
 
-//DispatchQueue.global().async {
-//    for _ in 1...3 {
-//        semaphore.wait()
-//        let card = cards.removeFirst()
-//        print("노루: \(card) 카드를 뽑았습니다!")
-//        Thread.sleep(forTimeInterval: 1)
-//        print("노루 \(card) 뽑기 끝")
-//        semaphore.signal()
-//    }
-//}
-
-//DispatchQueue.global().async {
-//    for _ in 1...3 {
-//        semaphore.wait()
-//        let card = cards.removeFirst()
-//        print("오동나무: \(card) 카드를 뽑았습니다!")
-//        semaphore.signal()
+//for _ in 1...5 {
+//    DispatchQueue.global().async {
+//            semaphore.wait()
+//            let card = cards.removeFirst()
+//            print("야곰: \(card) 카드를 뽑았습니다!")
+//            Thread.sleep(forTimeInterval: 1.3)
+//            print("야곰 \(card) 뽑기 끝")
+//            semaphore.signal()
 //    }
 //}
