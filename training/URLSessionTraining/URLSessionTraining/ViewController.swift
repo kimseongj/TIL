@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     let urlManager = URLManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        urlManager.sendAPI()
+        urlManager.postAPI()
     }
 
 
