@@ -1,0 +1,4 @@
+- Command + n = 새로운 파일 만들기
+- Command + option + enter = 프리뷰 만들기
+- Command + option + p = 프리뷰 갱신
+- Command + option + 화살표 (오른쪽, 왼쪽) = 코드 접기 / 펴기
