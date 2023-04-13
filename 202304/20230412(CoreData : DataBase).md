@@ -37,6 +37,18 @@
 
 
 
+### ORM(객체 관계 매핑)
+
+데이터베이스와 객체 지향 프로그래밍 언어 간의 호환되지 않는 데이터를 변환하는 프로그래밍 기법이다.
+
+객체 지향 언어에서 사용할 수 있는 "가상" 객체 데이터베이스를 구축하는 방법이다.
+
+
+
+CoreData는 DataBase, DBMS, ORM 셋다 아니고 CoreData는 CoreData이다.
+
+
+
 ## CoreData
 
 :fire:Core Data는 복잡하고 큰 user data를 저장하기에 적합하다. (UserDefaults는 app setting같은 간단한 정보를 저장하기에 적합)
@@ -47,10 +59,12 @@
 - 하나의 iCloud 계정의 여러 장치에서 데이터를 동기화하기 위해 Core Data는 스키마를 CloudKit 컨테이너에 자동으로 미러링한다.
 - Core Data의 데이터 모델 편집기를 통해 데이터의 유형과 관계를 정의하고 각각의 클래스 정의를 생성한다.
 - Core Data는 런타임에서 인스턴스를 관리한다.
+- Core Data는 관계형 DB를 사용...?
+- 비동기적으로 저장해주고 읽어 온다.
 
 
 
-### Persistence(지속성)
+### Persistence(저장)
 
 - Core Datas는 객체를 저장소에 매핑하는 세부 정보를 추상화하여 DB를 직접 관리하지 않고도 Swift 데이터를 쉽게 저장할 수 있다.
 
