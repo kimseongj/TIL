@@ -24,3 +24,27 @@
 ### animateKeyframes
 
 ![](https://i.imgur.com/GhCpHQA.png)
+
+사용 예시
+
+```swift
+UIView.animateKeyframes(withDuration: 3, delay: 0, options: .beginFromCurrentState) {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/4.0) {
+                self.left.frame = self.left.frame.offsetBy(dx: -120, dy: 0)
+                self.right.frame = self.right.frame.offsetBy(dx: 120, dy: 0)
+                self.spider.alpha = 1
+                self.line.alpha = 1
+                self.spider.frame = self.spider.frame.offsetBy(dx: 0, dy: 150)
+                self.line.frame.size.height = 150
+            }
+            UIView.addKeyframe(withRelativeStartTime: 3/4, relativeDuration: 1/4.0) {
+                self.left.frame = self.left.frame.offsetBy(dx: 120, dy: 0)
+                self.right.frame = self.right.frame.offsetBy(dx: -120, dy: 0)
+                self.spider.frame = self.spider.frame.offsetBy(dx: 0, dy: -150)
+                self.spider.alpha = 0
+                self.line.alpha = 0
+                self.line.frame.size.height = 0
+            }
+        }
+```
+

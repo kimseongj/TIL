@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "0D4C5EC5-CF15-47E3-B6D2-1ACA650BFC03"
+   uuid = "2BB3F61B-E3B2-4C07-B08A-24DCAE4C23FC"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "30DD4612-EE61-4557-947D-FAB6281537A4"
+            uuid = "A86A5C75-2396-4F33-ABA5-42FA077921C7"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CombineTraining/Repository.swift"
+            filePath = "ViewAni/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "fetchDailyBoxOffice(completion:)"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "touchUpAnimationButton()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
