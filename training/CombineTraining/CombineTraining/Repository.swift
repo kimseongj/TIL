@@ -10,12 +10,12 @@ import Combine
 
 class Repository {
 
-    func fetchPublisher() -> AnyPublisher<DailyBoxOffice, Error> {
+    func fetchPublisher<T: Decodable>(endpoint: EndPointMakeable, dataType: T) -> AnyPublisher<T, Error> {
         let dailyBoxOfficeEndpoint = DailyBoxOfficeEndpoint()
         let urlRequest = dailyBoxOfficeEndpoint.makeURLRequest()
         
         return URLSession.shared.dataTaskPublisher(for: urlRequest!).map { $0.data }
-            .decode(type: DailyBoxOffice.self, decoder: JSONDecoder())
+            .decode(type: T.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
 }
