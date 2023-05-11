@@ -31,7 +31,7 @@ class SkillView: UIView {
         sl.font = UIFont.systemFont(ofSize: 17)
         return sl
     }()
-
+    
     let skillButtonName = ["asd", "asdzxc", "asdqweqwe", "123sdasdzxc", "asdasfasd", "123asdaszxczxasd123", "Serbossa American good"]
     
     override init(frame: CGRect) {
@@ -44,7 +44,7 @@ class SkillView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     func configureUI() {
         self.addSubview(skillLabelView)
         skillLabelView.addSubview(skillLabel)
@@ -75,12 +75,10 @@ class SkillView: UIView {
         skillCollectionView.delegate = self
         skillCollectionView.dataSource = self
         skillCollectionView.collectionViewLayout = CollectionViewLeftAlignFlowLayout()
-                if let flowLayout = skillCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-                    flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-                  }
+        if let flowLayout = skillCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
     }
-    
-
 }
 
 extension SkillView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
@@ -91,22 +89,22 @@ extension SkillView: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = skillCollectionView.dequeueReusableCell(withReuseIdentifier: "SkillCell", for: indexPath) as! SkillCollectionViewCell
         cell.label.text = skillButtonName[indexPath.row]
-
+        
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        
-//        let skillButtonName = self.skillButtonName[indexPath.row]
-//        
-//        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]
-//        
-//        let skillButtonNameSize = (skillButtonName as NSString).size(withAttributes: attributes as [NSAttributedString.Key: Any])
-//        
-//        return CGSize(width: skillButtonNameSize.width + 32, height: 30 )
-//    }
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    //
+    //        let skillButtonName = self.skillButtonName[indexPath.row]
+    //
+    //        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]
+    //
+    //        let skillButtonNameSize = (skillButtonName as NSString).size(withAttributes: attributes as [NSAttributedString.Key: Any])
+    //
+    //        return CGSize(width: skillButtonNameSize.width + 32, height: 30 )
+    //    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-            15
-        }
+        15
+    }
 }
