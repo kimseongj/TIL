@@ -33,14 +33,14 @@ class SkillCollectionViewCell: UICollectionViewCell {
         label.snp.makeConstraints { make in
 //            make.centerX.centerY.equalToSuperview()
             make.top.equalToSuperview().offset(2)
-            
+            make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview().offset(-2)
         }
-        yellowRectangleView.snp.makeConstraints { make in
-            make.trailing.equalTo(label.snp.leading).offset(-4)
-            make.centerY.equalToSuperview()
-        }
+//        yellowRectangleView.snp.makeConstraints { make in
+//            make.trailing.equalTo(label.snp.leading).offset(-4)
+//            make.centerY.equalToSuperview()
+//        }
     }
     
     var label: UILabel = {
