@@ -36,7 +36,6 @@ class SkillView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
         configureUI()
         setSkillCollectionView()
     }
@@ -46,6 +45,7 @@ class SkillView: UIView {
     }
     
     func configureUI() {
+        self.backgroundColor = .white
         self.addSubview(skillLabelView)
         skillLabelView.addSubview(skillLabel)
         self.addSubview(skillCollectionView)
@@ -74,14 +74,14 @@ class SkillView: UIView {
         skillCollectionView.register(SkillCollectionViewCell.self, forCellWithReuseIdentifier: "SkillCell")
         skillCollectionView.delegate = self
         skillCollectionView.dataSource = self
-        skillCollectionView.collectionViewLayout = CollectionViewLeftAlignFlowLayout()
+        //skillCollectionView.collectionViewLayout = CollectionViewLeftAlignFlowLayout()
         if let flowLayout = skillCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
     }
 }
 
-extension SkillView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+extension SkillView: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return skillButtonName.count
     }
@@ -91,20 +91,5 @@ extension SkillView: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
         cell.label.text = skillButtonName[indexPath.row]
         
         return cell
-    }
-    
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    //
-    //        let skillButtonName = self.skillButtonName[indexPath.row]
-    //
-    //        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]
-    //
-    //        let skillButtonNameSize = (skillButtonName as NSString).size(withAttributes: attributes as [NSAttributedString.Key: Any])
-    //
-    //        return CGSize(width: skillButtonNameSize.width + 32, height: 30 )
-    //    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        15
     }
 }

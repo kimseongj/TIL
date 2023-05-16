@@ -130,4 +130,29 @@ Publisher : Combine API의 선언적 부분이다.
 
 값을 실제로 생성하지 않는다.
 
+
+
+
+
+Combine 
+
+- 프레임워크
+- 퍼블리셔와 섭스크립터의 결합
+
+
+
+Publisher -> 피연산자
+
+Operator -> 연산자 (map, filter...)
+
+Subscriber -> 합성된 값을 사용하는 타입
+
+Cancellable -> 합성을 중간에 취소 / 값을 메모리에 유지 
+
+
+
+동기
+
+
+
 [코드가 자라나는 텃밭 - 함수형 프로그래밍](https://codegarden-farmjun.tistory.com/49)
