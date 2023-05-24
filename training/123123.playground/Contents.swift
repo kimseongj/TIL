@@ -28,7 +28,7 @@ class Weather {
 
 var cancellables: Set<AnyCancellable> = []
 
-let weather = Weather(temperature: [])
+let weather = Weather(temperature: [20])
 weather.$temperature
     .sink() {
         print ("Temperature now: \($0)")

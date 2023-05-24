@@ -1,7 +1,5 @@
 Observable
 
-
-
 ```swift
 class Observable<T> {
     private var listener: ((T) -> Void)?
@@ -22,6 +20,8 @@ class Observable<T> {
     }
 }
 ```
+
+- value를 통해
 
 
 
