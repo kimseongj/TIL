@@ -79,9 +79,45 @@ async / await
 ![](https://hackmd.io/_uploads/HyBFXqiS3.png)
 
 - `await`란 잠재적인 일시 중단이라는 뜻으로, 비동기 함수가 실행도중 잠시 실행을 일시정지하고 스레드를 놓아줍니다.
-
 - 다른 더 중요한 작업을 스레드에 올려놓고 스레드가 작업을 수행하게 합니다. 그러다 어느 시점에 이르러서 일시 중단된 비동기 함수를 계속 실행하는 작업이 가장 중요하다고 판단되는 시점에 다시 스레드에 비동기 함수를 재개합니다.
-
 - 실제로 필요한 만큼 여러번 일시정지할 수도 있고, 아예 안할 수도 있다. (토큰을 통해 중요한 작업을 먼저 한다.)
 
-  
+
+
+![image-20230525095241946](/Users/ksj8277/Library/Application Support/typora-user-images/image-20230525095241946.png)
+
+
+
+
+
+Main Actor / Actor 
+
+작업 관리해주는 친구..?
+
+![](https://hackmd.io/_uploads/SJp4EV2Bn.png)
+
+
+
+
+
+![](https://hackmd.io/_uploads/S1_tANnH2.png)
+
+메서드에 async로 선언되어 있지 않을 때 await를 사용하는 방법
+
+Task.detached를 통해 메인 스레드에서 떼어내주고, 비동기 처리를 한 이후에  Task @MainActor를 통해 메인 스레드에 다시 넣어준다.
+
+
+
+Actor : 행하는 자 
+
+@Sendable 인 공유 자원을 소지한 타입
+
+actor마다 독릭된 작업 흐름을 가진다.
+
+
+
+
+
+
+
+![](https://hackmd.io/_uploads/ryUCWB3B2.png)
