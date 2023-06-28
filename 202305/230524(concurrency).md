@@ -10,14 +10,6 @@ await
 
 
 
-
-
-러를 반환할 수 있을때의 키워드 순서가 `async thorws` 라는 점입니다. 하지만 이걸 호출할때는? `try await` 로 호출하게 되죠ㅎ.. 이게 영어 문법 상 읽기에 더 자연스럽다
-
-
-
-
-
 ![](https://hackmd.io/_uploads/SkzAYFor3.png)
 
 Thumbnail을 불러오기 위한 절차
