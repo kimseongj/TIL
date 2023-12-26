@@ -71,4 +71,4 @@ subject
 ### 6️⃣AnyCancellable
 
 - `AnyCancellable`은 activity 또는 action이 취소되었을 때, `closure`를 실행하는 `type-erasing cancellable object`이다. 
-  - 
+
